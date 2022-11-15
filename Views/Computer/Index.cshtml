@@ -1,0 +1,53 @@
+@model IEnumerable<LabManagerMvc.Models.Computer>
+
+@{
+    ViewData["Title"] = "Computadores";
+}
+<h1>@ViewData["Title"]</h1><br/>
+
+
+<a asp-controller="Computer" asp-action="Create">
+    Cadastrar Computador
+</a><br/><br/>
+
+@if(Model.Count() == 0)
+{
+    <p>Nenhum computador cadastrado</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ram</th>
+                <th>Processador</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var computer in Model)
+            {
+                <tr>
+                    <td>@computer.Id</td>
+                    <td>@computer.Ram</td>
+                    <td>@computer.Processor</td>
+                    <td>
+                        
+                        <a asp-controller="Computer" asp-action="Show" asp-route-id="@computer.Id">
+                            Ver detalhes
+                         </a><br/><br/>
+
+                         <a asp-controller="Computer" asp-action="Edit" asp-route-id="@computer.Id">
+                            Editar
+                         </a><br/><br/>
+                        
+                        <a asp-controller="Computer" asp-action="Delete" asp-route-id="@computer.Id">
+                            Deletar
+                         </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

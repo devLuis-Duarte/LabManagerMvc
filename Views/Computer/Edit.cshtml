@@ -1,0 +1,26 @@
+@model LabManagerMvc.Models.Computer
+
+@{
+    ViewData["Title"] = $"Computador {Model.Id}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+<form asp-controller="Computer" asp-action="Update" method="post">
+    
+    <input type="hidden" asp-for="@Model.Id">
+
+    <label for="Ram">Ram</label> <br/>
+    <input asp-for="@Model.Ram" value="@Model.Ram"> <br/>
+     <!--<span asp-validation-for="Ram" class="text-danger"></span> <br/>-->
+
+    <label for="Processor">Processor</label> <br/>
+    <input asp-for="@Model.Processor" value="@Model.Processor"> <br/>
+    <!--<span asp-validation-for="Processor" class="text-danger"></span><br/>-->
+
+    <button class="btn btn-primary btn-sm" type="submit">Enviar</button>
+
+</form>
+
+</div>

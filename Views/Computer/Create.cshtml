@@ -1,0 +1,36 @@
+@model LabManagerMvc.Models.Computer
+
+@{
+    ViewData["Title"] = "Cadastrar computador";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <!--<form action="CadastrarComputer" method="post">
+        <label for="id">Id: </label>
+            <input type="number" name="id" id="id" class="form-control" min="1" required>
+
+        <label for="ram">Ram: </label>
+        <input type="text" name="ram" id="ram" class="form-control" required>
+
+        <label for="processor">Processador: </label>
+        <input type="text" name="processor" id="processor" class="form-control" required>
+
+        <button type="submit">Enviar</button>
+    </form>-->
+    
+    <form asp-controller="Computer" asp-action="Save" method="post">
+        <label for="id">Id: </label>
+            <input type="number" name="id" id="id" class="form-control" min="1" required>
+
+        <label for="ram">Ram: </label>
+        <input type="text" name="ram" id="ram" class="form-control" required>
+
+        <label for="processor">Processador: </label>
+        <input type="text" name="processor" id="processor" class="form-control" required>
+
+        <br/><button type="submit">Salvar</button>
+    </form>
+    
+</div>

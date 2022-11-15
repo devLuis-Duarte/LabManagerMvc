@@ -1,0 +1,27 @@
+@model LabManagerMvc.Models.Lab
+
+@{
+    ViewData["Title"] = "Cadastrar laboratório";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    
+    <form asp-controller="Lab" asp-action="Save" method="post">
+        <label for="id">Id: </label>
+            <input type="number" name="id" id="id" class="form-control" min="1" required>
+
+        <label for="_name">Name: </label>
+        <input type="text" name="_name" id="_name" class="form-control" required>
+
+        <label for="_number">Number: </label>
+        <input type="number" name="_number" id="_number" class="form-control" min="1" required>
+
+        <label for="_block">Block: </label>
+        <input type="text" name="_block" id="_block" class="form-control" required>
+
+        <br/><button type="submit">Salvar</button>
+    </form>
+
+</div>

@@ -1,0 +1,30 @@
+@model LabManagerMvc.Models.Lab
+
+@{
+    ViewData["Title"] = $"Laboratório {Model._Name}";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+<form asp-controller="Lab" asp-action="Update" method="post">
+    
+    <input type="hidden" asp-for="@Model.Id">
+
+    <label for="_Name">Name</label> <br/>
+    <input asp-for="@Model._Name" value="@Model._Name"  class="form-control">
+     <!--<span asp-validation-for="_Name" class="text-danger"></span>-->
+
+     <label for="_number">Number</label>
+        <input asp-for="@Model._Number" value="@Model._Number" class="form-control" min="1" required>
+        <!--<span asp-validation-for="_Number" class="text-danger"></span>-->
+
+    <label for="_Block">Block</label> <br/>
+    <input asp-for="@Model._Block" value="@Model._Block"  class="form-control"> <br/>
+    <!--<span asp-validation-for="_Block" class="text-danger"></span><br/>-->
+
+    <button class="btn btn-primary btn-sm" type="submit">Enviar</button>
+
+</form>
+
+</div>
